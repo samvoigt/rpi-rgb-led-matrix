@@ -232,6 +232,12 @@ void draw_circle(struct LedCanvas *c, int xx, int y, int radius, uint8_t r, uint
 	DrawCircle(to_canvas(c), xx, y, radius, col);
 }
 
+// Draw a circle centered at "x", "y", with a radius of "radius" and with "color"
+void draw_fill_circle(struct LedCanvas *c, int xx, int y, int radius, uint8_t r, uint8_t g, uint8_t b) {
+	const rgb_matrix::Color col = rgb_matrix::Color( r,g,b );
+	DrawCircle(to_canvas(c), xx, y, radius, col);
+}
+
 // Draw a line from "x0", "y0" to "x1", "y1" and with "color"
 void draw_line(struct LedCanvas *c, int x0, int y0, int x1, int y1, uint8_t r, uint8_t g, uint8_t b) {
 	const rgb_matrix::Color col = rgb_matrix::Color(r, g, b);

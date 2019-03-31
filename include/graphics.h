@@ -110,6 +110,9 @@ int VerticalDrawText(Canvas *c, const Font &font, int x, int y,
 // Draw a circle centered at "x", "y", with a radius of "radius" and with "color"
 void DrawCircle(Canvas *c, int x, int y, int radius, const Color &color);
 
+// Draw a filled circle centered at "x", "y", with a radius of "radius" and with "color"
+void DrawFillCircle(Canvas *c, int x, int y, int radius, const Color &color);
+
 // Draw a line from "x0", "y0" to "x1", "y1" and with "color"
 void DrawLine(Canvas *c, int x0, int y0, int x1, int y1, const Color &color);
 

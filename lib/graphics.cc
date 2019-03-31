@@ -82,6 +82,29 @@ void DrawCircle(Canvas *c, int x0, int y0, int radius, const Color &color) {
   }
 }
 
+void DrawFillCircle(Canvas *c, int x0, int y0, int radius, const Color &color) {
+  int x = radius, y = 0;
+  int radiusError = 1 - x;
+
+  while (y <= x) {
+    c->SetPixel(x + x0, y + y0, color.r, color.g, color.b);
+    c->SetPixel(y + x0, x + y0, color.r, color.g, color.b);
+    c->SetPixel(-x + x0, y + y0, color.r, color.g, color.b);
+    c->SetPixel(-y + x0, x + y0, color.r, color.g, color.b);
+    c->SetPixel(-x + x0, -y + y0, color.r, color.g, color.b);
+    c->SetPixel(-y + x0, -x + y0, color.r, color.g, color.b);
+    c->SetPixel(x + x0, -y + y0, color.r, color.g, color.b);
+    c->SetPixel(y + x0, -x + y0, color.r, color.g, color.b);
+    y++;
+    if (radiusError<0){
+      radiusError += 2 * y + 1;
+    } else {
+      x--;
+      radiusError+= 2 * (y - x + 1);
+    }
+  }
+}
+
 void DrawLine(Canvas *c, int x0, int y0, int x1, int y1, const Color &color) {
   int dy = y1 - y0, dx = x1 - x0, gradient, x, y, shift = 0x10;
 

@@ -81,5 +81,6 @@ cdef extern from "graphics.h" namespace "rgb_matrix":
         int DrawGlyph(Canvas*, int, int, const Color, uint32_t);
 
     cdef int DrawText(Canvas*, const Font, int, int, const Color, const char*)
-    cdef void DrawCircle(Canvas*, int, int, int, const Color)
+    cdef void Draw2Circle(Canvas*, int, int, int, const Color)
+    cdef void DrawFillCircle(Canvas*, int, int, int, const Color)
     cdef void DrawLine(Canvas*, int, int, int, int, const Color)
